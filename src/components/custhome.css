@@ -1,0 +1,9 @@
+
+.bg-img-cust {
+    background-attachment:fixed;
+    background-image: url("../images/regbike.jpg");
+    min-height: 800px;
+    background-size: cover;
+    background-position: center;
+    
+  }

@@ -1,0 +1,118 @@
+
+.bg-img-cust {
+    background-attachment:fixed;
+    background-image: url("../images/regbike.jpg");
+    min-height: 800px;
+    background-size: cover;
+    background-position: center;
+    
+  }
+  .bg-img-own {
+    background-attachment:fixed;
+    background-image: url("../images/bike.jpg");
+    min-height: 800px;
+    background-size: cover;
+    background-position: center;
+    
+  }
+  .bg-img-custhome {
+    background-attachment:fixed;
+    background-image: url("../images/bikehome.jpg");
+    min-height: 800px;
+    background-size: cover;
+    background-position: center;
+    
+  }
+  .bg-img-vehreg {
+    background-attachment:fixed;
+    background-image: url("../images/vehreg.jpg");
+    min-height: 800px;
+    background-size: cover;
+    background-position: center;
+    
+  }
+  .bg-img-bookveh {
+    background-attachment:fixed;
+    background-image: url("../images/bookveh.jpg");
+    min-height: 800px;
+    background-size: cover;
+    background-position: center;
+    
+  }
+  .bg-img-bookdetail {
+    background-attachment:fixed;
+    background-image: url("../images/bookdetails.jpeg");
+    min-height: 800px;
+    background-size: cover;
+    background-position: center;
+    
+  }
+  .bg-img-thank {
+    background-attachment:fixed;
+    background-image: url("../images/Thank.jpg");
+    min-height: 800px;
+    background-size: cover;
+    background-position: center;
+    
+  }
+
+  .App {
+    background-color: white;
+   
+  }
+  
+  .Auth-form-container {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    
+  }
+  
+  .Auth-form {
+    width: 500px;
+    box-shadow: rgb(0 0 0 / 16%) 1px 1px 10px;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    border-radius: 8px;
+    background: rgba(0,0,0,0.4);
+    box-shadow: 10px 10px 5px 0px ;
+  }
+  
+  .Auth-form-content {
+    padding-left: 12%;
+    padding-right: 12%;
+  }
+  
+  .Auth-form-title {
+    text-align: center;
+    margin-bottom: 1em;
+    font-size: 24px;
+    color: white;
+    font-weight: 800;
+  }
+  
+  .dashboard
+  {
+    text-align: center;
+  }
+  .heading
+  {
+    text-align: center;
+    background-color: burlywood;
+  }
+  .image
+  {
+     align-items: center;
+     padding-left: 370px;
+     background-size: auto;
+     
+  }
+  
+  label {
+    font-size: 14px;
+    font-weight: 600;
+    color: rgb(34, 34, 34);
+  }
+  

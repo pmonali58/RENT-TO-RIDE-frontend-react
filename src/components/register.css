@@ -1,0 +1,32 @@
+.bg-img{
+    background-attachment: fixed;
+    background-image: url('../images/duke.jpg') fixed;
+    background-size: cover;
+   
+}
+
+*[role="form"] {
+   max-width: 550px;
+   float:left;
+   padding: 15px;
+   margin: 0 auto;
+   background: rgba(0,0,0,0.4);
+   border-radius: 0px;
+   border : 0px;
+   text-decoration-color: floralwhite;
+}
+
+*[role="form"] h2 { 
+   font-family: 'Open Sans' , sans-serif;
+   font-size: 40px;
+   font-weight: 600;
+   color: #9ed51eb9;
+   margin-top: 5%;
+   text-align: center;
+   text-transform: uppercase;
+   letter-spacing: 4px;
+}
+label {
+    color:white;
+
+}

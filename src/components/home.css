@@ -1,0 +1,4 @@
+.bg-img {
+    background: url('../images/road.jpg') fixed;
+   background-size: cover;
+}

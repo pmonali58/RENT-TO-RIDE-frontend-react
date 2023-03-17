@@ -28,40 +28,25 @@ var senddata=(e)=>
   navigate("/VehicleReg");
 }
     return(
-        <div>
-           <nav className="navbar navbar-expand-sm bg-light mb-3">
+        <div class="bg-img-custhome">
+     
+      <nav className="navbar navbar-expand-sm bg-info mb-3">
         <div className="container-fluid">
           <ul className="navbar-nav">
             <li className="nav-item">
-              <Link to="/logout" className="nav-link ps-3">Logout</Link>
+              <Link to="/logout" className="nav-link ps-3">LogOut</Link>
             </li>
             <li className="nav-item">
               <Link to="/viewvehicle" className="nav-link ps-3">View Vehicle</Link>
             </li>
           </ul>
+          
     </div>
       </nav>
-      <h1>Owner Home</h1>
-      <table>
-        <tr>
-        <th>
-         welcome {owner && owner.fname} {owner && owner.lname}
-      </th>
-      </tr>
-      <tr>
-      <td>Email</td>
-      </tr>
-      {/* <tr>
-      <td>{owner && owner.a_id.apartmentno}</td>
-      <td>{owner && owner.email_id}</td>
-      </tr> */}
-
+      <h1 class="text-danger"> Owner Home</h1>
+          <h1>welcome {owner && owner.fname} {owner && owner.lname}</h1>
       
-      </table>
-      
-      <div><img src={'data:image/jpeg;base64,${owner && owner.govn_id_img}'} width="100" height="100"/></div>
-      
-<button onClick={(e)=>{senddata(e)}}>Add vehicle</button>
+<button onClick={(e)=>{senddata(e)}} class="col-3 btn btn-primary mb-4">Add vehicle</button>
         </div>
     );
 }

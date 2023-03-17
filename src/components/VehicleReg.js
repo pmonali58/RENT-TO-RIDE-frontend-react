@@ -14,7 +14,10 @@ function VehicleReg()
        veh_name:"",
        type:"",
        plate_number:"",
-        own_id:0
+        own_id:0,
+        charges_per_hour:"",
+        charges_per_day:""
+
           }
 
           const reducer=(state,action)=>{
@@ -63,17 +66,16 @@ function VehicleReg()
          }
          fetch("http://localhost:8080/uploadvehicle/"+obj.veh_id,reqOptions1)
          .then(resp=>resp.json())
-         .then(obj=>{
-           if(obj.status===false)
+         .then(obj=>{ 
+           if(obj.istatus===0)
          {
              alert("Request has not been approved");
-             //navigate("/viewvehicle");
-            
+             //navigate("/viewvehicle");  
          }
          else{
            
-            alert("Vehicle Registration successful");
-             //navigate("/viewvehicle");
+            alert("Registration Not yet Approved !! Try login");
+             navigate("/OwnerHome");
          }
        
          })
@@ -84,35 +86,43 @@ function VehicleReg()
      .catch((error)=>alert("server error.Try later"))
   }
     return(
-        <div>
-            <h1>vehicle Registration</h1>
-            <form>
-      <div className="mb-3">
-        <label htmlfor="veh_name" classname="form-label">Enter vehicle name :</label>
-        <input type="text" className="form-control" id="veh_name" name="veh_name" value={info.veh_name} 
+      <div class="bg-img-vehreg">
+      <div className="Auth-form-container">
+     
+      <form className="Auth-form">
+    <div className="Auth-form-content">
+    <h3 className="Auth-form-title">Vehicle Registration</h3> 
+    <div className="form-group mt-3"> 
+       <input type="text" className="form-control mt-1" placeholder="Vehicle name" id="veh_name" name="veh_name" value={info.veh_name} 
         onChange={(e)=>{dispatch({type:'update',fld:'veh_name',val:e.target.value})}}/>
       </div>
-      <div className="mb-3">
-        <label htmlfor="type" classname="form-label">Enter Type :</label>
-        <input type="text" className="form-control" id="type" name="password" value={info.type}
+    </div>
+    <div className="form-group mt-3">
+      <input type="text" className="form-control mt-1" placeholder="Type of vehicle" id="type" name="password" value={info.type}
         onChange={(e)=>{dispatch({type:'update',fld:'type',val:e.target.value})}}/>
-      </div>
-      <div className="mb-3">
-        <label htmlfor="plate_number" classname="form-label">Enter vehicle Plate number:</label>
-        <input type="text" className="form-control" id="plate_number" name="plate_number" value={info.plate_number} 
+    </div>
+    <div className="form-group mt-3">
+     <input type="text" className="form-control mt-1" placeholder="plate number" id="plate_number" name="plate_number" value={info.plate_number} 
         onChange={(e)=>{dispatch({type:'update',fld:'plate_number',val:e.target.value})}}/>
-      </div>
-      <div className="mb-3">
-        <label htmlfor="condition" classname="form-label">upload vehicle photo :</label>
-        <input type="file" className="form-control" id="condition" name="condition" 
+    </div>
+    <div className="form-group mt-3">
+        <input type="file" className="form-control mt-1" placeholder="vehicle image" id="veh_image" name="veh_image" 
         onChange={(e)=> setfile(e.target.files[0])}/>
-      </div>
+    </div>
+  <div className="form-group mt-3">
+        <input type="number" className="form-control mt-1" placeholder="Charges per hour" id="charges_per_hour" name="charges_per_hour" 
+        onChange={(e)=>{dispatch({type:'update',fld:'charges_per_hour',val:e.target.value})}}/>
+   </div>
+    <div className="form-group mt-3">
+       <input type="number" className="form-control mt-1" placeholder="charges per day" id="charges_per_day" name="charges_per_day" 
+         onChange={(e)=>{dispatch({type:'update',fld:'charges_per_day',val:e.target.value})}}/>
+   </div>
 
-      <button type="submit" className="btn btn-primary" onClick={(e)=>{sendData(e)}}>Submit</button>
-      <button type="reset" className="btn btn-primary" onClick={()=>{dispatch({type:'reset'})}}>Clear</button>
-    </form>
-    <p>{JSON.stringify(info)}</p>
-        </div>
+    <button type="submit" className="btn btn-primary" onClick={(e)=>{sendData(e)}}>Submit</button>
+    <button type="reset" className="btn btn-primary" onClick={()=>{dispatch({type:'reset'})}}>Clear</button>
+  </form>
+      </div>
+</div>
     )
 
 }

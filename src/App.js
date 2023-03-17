@@ -10,6 +10,16 @@ import OwnerReg from './components/OwnerReg';
 import CustomerReg from './components/CustomerReg';
 import VehicleReg from './components/VehicleReg';
 import ViewVehicle from './components/ViewVehicle';
+import CustomerHome from './components/CustomerHome';
+import VehicleList from './components/VehicleList';
+import Bookcomponent from './components/BookComponent';
+import PaymentComp from './components/PaymentComp';
+import ThankComp from './components/ThankComp';
+import AdminHome from './components/AdminHome';
+import ApproveCust from './components/ApproveCust';
+import ApproveOwn from './components/ApproveOwn';
+import ApproveVeh from './components/ApproveVeh';
+import AdminReg from './components/AdminReg';
  
 
 function App() {
@@ -28,12 +38,16 @@ function App() {
               <Link to="login" className="nav-link ps-3">Login</Link>
             </li>
             <li className="nav-item">
-              <Link to="OwnerReg" className="nav-link ps-3">OwnerRegistration</Link>
+              <Link to="OwnerReg" className="nav-link ps-3">Owner Registration</Link>
             </li>
             <li className="nav-item">
-              <Link to="CustomerReg" className="nav-link ps-3">CustomerRegistration</Link>
+              <Link to="CustomerReg" className="nav-link ps-3">Customer Registration</Link>
+            </li>
+            <li className="nav-item">
+              <Link to="AdminReg" className="nav-link ps-3">Admin Registration</Link>
             </li>
           </ul>
+          
     </div>
       </nav>
       
@@ -47,8 +61,19 @@ function App() {
         <Route path="viewvehicle" element={<ViewVehicle/>}/>
         <Route path="logout" element={<LogoutComp/>}/>
         <Route path="CustomerReg" element={<CustomerReg/>}/>
-
+        <Route path="CustomerHome" element={<CustomerHome/>}/>
+        <Route path="VehicleList" element={<VehicleList/>}/>
+        <Route path="BookComponent" element={<Bookcomponent/>}/>
+        <Route path="PaymentComp" element={<PaymentComp/>}/>
+        <Route path="ThankComp" element={<ThankComp/>}/>
+        <Route path="AdminHome" element={<AdminHome/>}/>
+        <Route path="ApproveCust" element={<ApproveCust/>}/>
+        <Route path="ApproveOwn" element={<ApproveOwn/>}/>
+        <Route path="ApproveVeh" element={<ApproveVeh/>}/>
+        <Route path="AdminReg" element={<AdminReg/>}/>
+         
       </Routes>
+      
     </div>
   );
 }

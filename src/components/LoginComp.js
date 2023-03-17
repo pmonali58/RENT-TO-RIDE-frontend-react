@@ -1,6 +1,7 @@
 import React, { useReducer, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import './login.css';
 
 import OwnerHome from "./OwnerHome";
 import { login } from "./slice";
@@ -72,8 +73,9 @@ export default function LoginComp()
           {
             navigate("/CustomerHome");
           }
-          else if(obj.role_name==="admin"){
-            navigate("/AdminHome")
+          else if(obj.role_name==="admin")
+          {
+            navigate("/AdminHome");
           }
           
         }
@@ -82,42 +84,52 @@ export default function LoginComp()
       
      }
     return(
-      <div>
-       <div class="wrapper fadeInDown">
-  <div id="formContent">
-   
-
-    
-  
-
-    
-    <form>
-      <table>
-        <tr>
-      <td><label htmlfor="email_id" classname="form-label">Enter EmailID :</label>
-        <input type="text" className="fadeIn second" id="emailid" name="emailid" value={info.email_id} 
-        onChange={(e)=>{dispatch({type:'update',fld:'email_id',val:e.target.value})}}/><br/>
-        <br/></td></tr>
-       <tr>
-        <td><label htmlfor="password" classname="form-label">Enter password :</label>
-        <input type="password" className="fadeIn third" id="password" name="password" value={info.password}
-        onChange={(e)=>{dispatch({type:'update',fld:'password',val:e.target.value})}}/>
-        </td>
-      </tr>
-      <br/>
- <button type="submit" class="fadeIn fourth" onClick={(e)=>{sendData(e)}}>Submit</button>
-      <button type="reset" class="fadeIn fourth" onClick={()=>{dispatch({type:'reset'})}}>Clear</button>
-
-      </table>
-    </form>
-
-  
-
-
-  </div>
+      
+          <div class="bg-img-login">
+          <div className="Auth-form-container">
+      
+      <form className="Auth-form">
+        <div className="Auth-form-content">
+          <h3 className="Auth-form-title">Sign In</h3>
+          <div className="form-group mt-3">
+            <label class="text-white">Email address</label>
+            <input
+              type="email"
+              id="emailid"
+              name="emailid"
+              className="form-control mt-1"
+              placeholder="Enter email"
+              value={info.email_id}
+              onChange={(e) => { dispatch({ type: 'update', fld: 'email_id', val: e.target.value }) }}
+            />
+          </div>
+          <div className="form-group mt-3">
+            <label class="text-white">Password</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              className="form-control mt-1"
+              placeholder="Enter password"
+              value={info.password}
+              onChange={(e) => { dispatch({ type: 'update', fld: 'password', val: e.target.value }) }}
+            />
+          </div>
+          <div className="d-grid gap-2 mt-3">
+            <button type="submit" className="btn btn-primary" onClick={(e) => { sendData(e) }}>
+              Submit
+            </button>
+            <button type="reset" className="btn btn-primary" onClick={() => { dispatch({ type: 'reset' }) }}>
+              Clear
+            </button>
+          </div>
+          
+          <p>{JSON.stringify(info)}</p>
+          <p>{msg}</p>
+        </div>
+      </form>
+      
 </div>
-    <p>{JSON.stringify(info)}</p>
-    <p>{msg}</p>
     </div>
     )
 }
